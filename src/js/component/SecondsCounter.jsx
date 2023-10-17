@@ -47,7 +47,8 @@ const SecondsCounter = () => {
   }, []);
 
   useEffect(() => {
-    const digits = count.toString().split('').map((digit, index) => (
+    const formatCount = count.toString().padStart(5, "0");
+    const digits = formatCount.split('').map((digit, index) => (
       <div key={index} className="digit d-inline-block p-2 border text-center text-primary">{digit}</div>
     ));
     setDigitDivs(digits);
